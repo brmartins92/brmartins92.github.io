@@ -1,14 +1,49 @@
 $(document).ready(function(){
-  //var pag = window.location.pathname;
-  //pag = pag.split("/");
-  //switch(pag[5]){
-    //case 'index.html':
+     
     modal();
-    //break; 
-  //}
+  
+ 
 });
 
+
+
+
+
+
+
+
+
+
+
 function modal(){
+    $('.button').click(function(){
+        abrir_modal();
+        var elemento = $(this).val();
+        var link = 'http://localhost:8081/scrape/'+elemento;
+        var request = $.ajax({
+            url: link,
+            method: "get",
+            data: { elemento : elemento },
+            dataType: "json"
+        });
+
+        request.done(function( json ) {
+            $('#modal_img').html("<img src='"+json['img'].src+"' id='img_modal'>");
+            $.each(json, function (key, data) {
+                if(key != 'img'){
+                    console.log(json[key].titulo);
+                    console.log(json[key].dado);
+                }
+            })
+            
+        });
+
+        request.fail(function( jqXHR, textStatus ) {
+            console.log( "Request failed: " + textStatus );
+        });  
+   });
+
+    /*
   $('#btn_h').click(function(e) {
     e.preventDefault();
     $('#title_modal').text('Hidrogênio');
@@ -843,7 +878,7 @@ function modal(){
         $('#modal_orbital').val("3d5");
         abrir_modal();
     });
-    
+    */
     
 
   $('.window .close').click(function (e) {
