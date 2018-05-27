@@ -171,7 +171,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 #tabela{
 	float: left;
 	width: 1120px;
-	margin-top: 50px;
+	margin-top: 100px;
+	clear: both;
+	float: left;
+	border-style: solid;
+    border-width: 0px ;
 }
 
 #div_1a,
@@ -228,7 +232,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 	margin-top: -7px;
 	width: 1120px;
 	height: 100px;
-	 border-style: solid;
+	border-style: solid;
     border-width: 0px ;
 }
 
@@ -246,11 +250,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 }
 #div_legend_estado{
 	position: absolute;
-	margin-left: 211;
 	margin-top: 58px;
 	border: 1px;
-	width: auto;
+	width: 600px;
 	height: auto;
+	border-style: solid;
+    border-width: 0px ;
+}
+#div_legend_estado p {
+	float: left;
+	margin-left: 30px;
 }
 .size1{
 	font-size: 12px;
