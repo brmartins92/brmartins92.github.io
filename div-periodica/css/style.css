@@ -29,7 +29,7 @@ padding:20px;
 /* Personalize a janela modal aqui. Você pode adicionar uma imagem de fundo. */
 #boxes #dialog {
 width:835px;
-height:368px;
+height:auto;
 background-color: #C0C0C0;
 margin-left: 14%;
 margin-top: 30px;
