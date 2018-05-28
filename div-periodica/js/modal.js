@@ -18,6 +18,7 @@ $(document).ready(function(){
 function modal(){
     $('.button').click(function(){
         $('#info').empty();
+        $('.window').hide();
         abrir_modal();
         var elemento = $(this).val();
         var link = 'http://localhost:8081/scrape/'+elemento;
