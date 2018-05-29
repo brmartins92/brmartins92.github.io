@@ -21,7 +21,9 @@ function modal(){
         $('.window').hide();
         abrir_modal();
         var elemento = $(this).val();
-        var link = 'http://localhost:8081/scrape/'+elemento;
+        //var link = 'http://localhost:8081/scrape/'+elemento;
+
+        var link = 'https://div-periodica.herokuapp.com/scrape/'+elemento;
         var request = $.ajax({
             url: link,
             method: "get",
