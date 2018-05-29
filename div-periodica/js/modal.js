@@ -8,13 +8,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
 function modal(){
     $('.button').click(function(){
         $('#info').empty();
