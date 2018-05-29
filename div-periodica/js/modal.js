@@ -31,7 +31,7 @@ function modal(){
                     $('#info').append("\
                         <label class='lbinfo'>\
                             <legend>"+json[key].titulo+"</legend>\
-                            <input type='text' class='lbinfo' id='modal_num_atomico' value="+json[key].dado+">\
+                            <input type='text' class='' id='modal_num_atomico' value="+json[key].dado+">\
                         </label>\
                     ");
                 }
