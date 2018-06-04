@@ -15,7 +15,7 @@ function modal(){
         abrir_modal();
         var elemento = $(this).val();
         //var link = 'http://localhost:8081/scrape/'+elemento;
-
+        
         var link = 'https://div-periodica.herokuapp.com/props/'+elemento;
         var request = $.ajax({
             url: link,
@@ -25,14 +25,12 @@ function modal(){
         });
 
         request.done(function( json ) {
-            
-            
+
             if(json['foundInfo'].check == true){
                 $('#modal_img').show();
-
                 $('#modal_img').html("<img src='"+json['img'].src+"' id='img_modal'>");
                 $.each(json, function (key, data) {
-                    if(key != 'img'){
+                    if((key != 'img')&&(json[key].titulo)){
                         $('#info').append("\
                             <label class='lbinfo'>\
                                 <legend>"+json[key].titulo+"</legend>\
@@ -69,10 +67,6 @@ function modal(){
 
 
             }
-
-
-
-
 
 
         });
