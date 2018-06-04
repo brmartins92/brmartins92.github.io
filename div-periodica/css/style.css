@@ -30,9 +30,9 @@ border-radius:10px;
 /* Personalize a janela modal aqui. Você pode adicionar uma imagem de fundo. */
 #boxes #dialog {
 width:835px;
-height:auto;
+height: 340px;
 /*background-color: #C0C0C0;*/
-
+overflow: auto;
 
 background: rgb(242,245,246); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF3.6-15 */
