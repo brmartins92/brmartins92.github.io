@@ -25,17 +25,55 @@ function modal(){
         });
 
         request.done(function( json ) {
-            $('#modal_img').html("<img src='"+json['img'].src+"' id='img_modal'>");
-            $.each(json, function (key, data) {
-                if(key != 'img'){
-                    $('#info').append("\
-                        <label class='lbinfo'>\
-                            <legend>"+json[key].titulo+"</legend>\
-                            <input type='text' class='' id='modal_num_atomico' value="+json[key].dado+">\
-                        </label>\
-                    ");
-                }
-            })
+            
+            
+            if(json['foundInfo'].check == true){
+                $('#modal_img').show();
+                $('#modal_img').html("<img src='"+json['img'].src+"' id='img_modal'>");
+                $.each(json, function (key, data) {
+                    if(key != 'img'){
+                        $('#info').append("\
+                            <label class='lbinfo'>\
+                                <legend>"+json[key].titulo+"</legend>\
+                                <input type='text' class='' id='modal_num_atomico' value="+json[key].dado+">\
+                            </label>\
+                        ");
+                    }
+                })
+            }else if(json['foundInfo'].check == false){
+
+                $('#modal_img').hide();
+                var link = 'https://div-periodica.herokuapp.com/summary/'+elemento;
+                var request = $.ajax({
+                    url: link,
+                    method: "get",
+                    data: { elemento : elemento },
+                    dataType: "json"
+                });
+                request.done(function( json ) {
+                    $.each(json, function (key, data) {
+                        
+                            $('#info').append("\
+                                <p class='lbinfo'>\
+                                    "+json[key].text+"\
+                                </p>\
+                            ");
+                       
+                    })
+                });
+
+                request.fail(function( jqXHR, textStatus ) {
+                    console.log( "Request failed: " + textStatus );
+                });  
+
+
+            }
+
+
+
+
+
+
         });
 
         request.fail(function( jqXHR, textStatus ) {
