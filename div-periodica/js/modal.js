@@ -29,6 +29,7 @@ function modal(){
             
             if(json['foundInfo'].check == true){
                 $('#modal_img').show();
+                $('#dialog').css('height','auto'); 
                 $('#modal_img').html("<img src='"+json['img'].src+"' id='img_modal'>");
                 $.each(json, function (key, data) {
                     if(key != 'img'){
